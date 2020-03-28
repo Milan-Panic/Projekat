@@ -1,5 +1,7 @@
 import React, {Component} from 'react'
-import { getPlayerId, getPlayerStats } from './StatsService'
+import axios from 'axios'
+
+
 
 class Container extends Component {
     constructor(props){
@@ -9,11 +11,40 @@ class Container extends Component {
             playerStats: {}
         }
     }
+    getPlayerId = (name) => {
+        axios.get(`https://www.balldontlie.io/api/v1/players?search=${this.state.playerName}`)
+        .then(async res => {
+            //console.log(res.data.data);    
+            if(res.data.data[0] === undefined) {
+                alert("This player is either injured or hasn't played yet")
+            }else if(res.data.data > 1){
+                alert("Please specify the name more!")
+            } else{
+               await this.getPlayerStats(res.data.data[0].id)
+            }   
+        }).catch(err => {
+            console.log(err);
+            
+        })     
+    }
+    getPlayerStats = (playerId) => {
+        axios.get(`https://www.balldontlie.io/api/v1/season_averages?season=2019&player_ids[]=${playerId}`)
+        .then(async res => {
+            console.log(res.data.data); 
+            if(res.data.data[0] === undefined) {
+                alert("This player is either injured or hasn't played yet")
+            } else{               
+                this.setState({playerStats: res.data.data[0]})   
+            } 
+        }).catch(er=>{
+            console.log(er);       
+        })
+    }
 
     handleSubmit = (e) => {
         e.preventDefault();
-        getPlayerId(this.state.playerName)
-        this.setState({playerStats: getPlayerStats()})
+        this.getPlayerId()
+        console.log(this.state.playerName);        
     }
     
     handleChange = (event) => {
@@ -25,10 +56,10 @@ class Container extends Component {
         }
     }
 
-    componentDidMount(){
-        getPlayerId()
-        getPlayerStats()
-    }
+    // componentDidMount(){
+    //     this.getPlayerId()
+    //     this.getPlayerStats()
+    // }
 
     render(){
         return (
