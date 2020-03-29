@@ -19,13 +19,25 @@ class Container extends Component {
     getId1 = (name) => {
         axios.get(`https://www.balldontlie.io/api/v1/players?search=${name}`)
         .then(resu => {
-            this.setState({playerId: resu.data.data[0].id})
+            if(resu.data.data[0] === undefined) {
+                alert("This player is either injured or hasn't played yet")
+            }else if(resu.data.data > 1){
+                alert("Please specify the name more!")
+            } else{
+                this.setState({playerId: resu.data.data[0].id})
+                    }
         })
     }
     getId2 = (name) => {
         axios.get(`https://www.balldontlie.io/api/v1/players?search=${name}`)
         .then(resu => {
-            this.setState({player2Id: resu.data.data[0].id})
+            if(resu.data.data[0] === undefined) {
+                alert("This player is either injured or hasn't played yet")
+            }else if(resu.data.data > 1){
+                alert("Please specify the name more!")
+            } else{
+                this.setState({player2Id: resu.data.data[0].id})
+                    }            
         })
     }
     // getPlayerId = () => {
