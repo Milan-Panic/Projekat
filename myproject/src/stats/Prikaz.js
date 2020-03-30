@@ -5,7 +5,7 @@ const Prikaz = (props) => {
     let {stats} = props;
     return (
         <div className="prikaz">
-            {stats.map(stat=><Player player={stat} />)}
+            {stats.map((stat, i)=><Player key={i} player={stat} />)}
         </div>
     )
     

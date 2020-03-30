@@ -10,9 +10,11 @@ class Container extends Component {
         this.state={
             playerName: null,
             playerId: '',
-            playerStats: [],
+            playerOneSt: {},
             player2Name: null,
-            player2Id: ''
+            player2Id: '',
+            playerTwoSt: {},
+            playerStats: []
         }
     }
     
@@ -56,26 +58,68 @@ class Container extends Component {
             
     //     })     
     // }
-    getPlayerStats = (playerId, drugi) => {
-        axios.get(`https://www.balldontlie.io/api/v1/season_averages?season=2019&player_ids[]=${playerId}&player_ids[]=${drugi}`)
-        .then(async res => {
+    // getPlayerStats = (playerId, drugi) => {
+    //     axios.get(`https://www.balldontlie.io/api/v1/season_averages?season=2019&player_ids[]=${playerId}&player_ids[]=${drugi}`)
+    //     .then(async res => {
+    //         console.log(res.data.data); 
+    //         if(res.data.data === undefined) {
+    //             alert("This player is either injured or hasn't played yet")
+    //         } else{
+    //             this.setState({playerStats: res.data.data})   
+    //         } 
+    //     }).catch(er=>{
+    //         console.log(er);       
+    //     })
+    // }
+
+    getPlOne = (playerId1) => {
+        axios.get(`https://www.balldontlie.io/api/v1/season_averages?season=2019&player_ids[]=${playerId1}`)
+        .then( res => {
+            if(res.data.data === undefined) {
+                alert("This player is either injured or hasn't played yet")
+            } else{
+                console.log(res.data.data[0]); 
+                this.setState({playerOneSt: res.data.data[0]})
+                //return res.data.data[0]   
+            } 
+        })
+    }
+
+    getPlTwo = (playerId2) => {
+        axios.get(`https://www.balldontlie.io/api/v1/season_averages?season=2019&player_ids[]=${playerId2}`)
+        .then( res => {
             console.log(res.data.data); 
             if(res.data.data === undefined) {
                 alert("This player is either injured or hasn't played yet")
             } else{
-                this.setState({playerStats: res.data.data})   
+                this.setState({playerTwoSt: res.data.data[0]})
+                //return res.data.data[0]   
             } 
-        }).catch(er=>{
-            console.log(er);       
         })
+    }
+
+    getPlayerStats = (playerId1, playerId2) => {
+        this.getPlOne(playerId1)
+        this.getPlTwo(playerId2)
+        
+        // let stats = [];
+        //let pl1 = this.getPlOne(playerId1)
+        //stats.push(pl1);
+        //let pl2 = this.getPlTwo(playerId2)
+        //stats.push(pl2);
+        //console.log(stats);                
+    }
+    setGlobalState = () => {
+        this.getPlayerStats(this.state.playerId, this.state.player2Id)        
+        this.setState({playerStats: [this.state.playerOneSt, this.state.playerTwoSt]}) 
     }
 
     handleSubmit = (e) => {
         e.preventDefault();
-        //this.getPlayerId()
-        this.getPlayerStats(this.state.playerId, this.state.player2Id)
+        this.setGlobalState()
         console.log(this.state.playerName);        
-        console.log(this.state.player2Name);        
+        console.log(this.state.player2Name);
+        //this.getPlayerId()
     }
     
     handleChange = (event) => {
