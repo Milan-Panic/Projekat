@@ -12,7 +12,11 @@ class Wrapper extends React.Component {
             prikaz: []
         }
 
-        this.getAllTeams();
+        
+    }
+
+    componentDidMount(){
+        this.getAllTeams()
     }
 
     getAllTeams = async () => {
@@ -37,7 +41,7 @@ class Wrapper extends React.Component {
             prikaz: data,
             showConference: !this.state.showConference
         })
-        console.log(data);
+        //console.log(data);
         
     }
 
