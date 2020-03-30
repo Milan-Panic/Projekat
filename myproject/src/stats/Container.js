@@ -113,7 +113,7 @@ class Container extends Component {
         this.getPlayerStats(this.state.playerId, this.state.player2Id)        
         this.setState({playerStats: [this.state.playerOneSt, this.state.playerTwoSt]}) 
     }
-
+    
     handleSubmit = (e) => {
         e.preventDefault();
         this.setGlobalState()
