@@ -18,3 +18,18 @@ code {
 .player{
   width: 30%;
 }
+
+.West{
+  background-color: red;
+  width: 200px;
+  color: whitesmoke;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+.East{
+  background-color: blue;
+  width: 200px;
+  color: whitesmoke;
+  margin: 0 auto;
+  margin-top: 10px;
+}

@@ -23,7 +23,7 @@ class Wrapper extends React.Component {
         let data = await getAll();
         this.setState({
             teams: data,
-            prikaz: data //ovo ovde je da bi imalo pocetno citanje
+            //prikaz: data //ovo ovde je da bi imalo pocetno citanje
         })
     }
     west = () => {
@@ -48,9 +48,9 @@ class Wrapper extends React.Component {
 
     render() {
         return (
-            <div>
-                <button onClick={() => { this.handleClick() }}>{this.state.showConference ? 'Show East' : 'Show West'}</button>
-                <TeamsList teams={this.state.prikaz}/>
+            <div className="cont">
+                <button onClick={() => { this.handleClick() }} className={this.state.showConference ? 'West' : 'East'}>{this.state.showConference ? 'Show West' : 'Show East'}</button>
+                <TeamsList teams={this.state.prikaz.length != 0 ? this.state.prikaz : this.east()}/>
             </div>
         )
     }
