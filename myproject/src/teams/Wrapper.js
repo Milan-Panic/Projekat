@@ -50,7 +50,7 @@ class Wrapper extends React.Component {
         return (
             <div className="cont">
                 <button onClick={() => { this.handleClick() }} className={this.state.showConference ? 'West' : 'East'}>{this.state.showConference ? 'Show West' : 'Show East'}</button>
-                <TeamsList teams={this.state.prikaz.length != 0 ? this.state.prikaz : this.east()}/>
+                <TeamsList teams={this.state.prikaz.length !== 0 ? this.state.prikaz : this.east()}/>
             </div>
         )
     }

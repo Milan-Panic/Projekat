@@ -1,16 +1,22 @@
 import React, { useState, useEffect } from 'react';
-import { register } from './auth.service';
+import { useHistory } from 'react-router-dom';
+import { register, login } from '../../auth.server';
+import { setToken, setId } from '../../services';
 
-const Register = ({setUser, history}) => {
+const Register = () => {
     const [ime, setIme] = useState('')
     const [prezime, setPrezime] = useState('')
     const [korisnicko, setKorisnicko] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [confPass, setconfPass] = useState('')
+    const [url, setUrl] = useState('')
+
 
     const [validEmail, setValidEmail] = useState('')
     const [samePass, setSamePass] = useState('')
+
+    const history = useHistory();
 
     useEffect(()=>{
         function isValidEmail() {
@@ -30,18 +36,29 @@ const Register = ({setUser, history}) => {
         
     },[confPass, password])
 
-    function handleSubmit (){
-        if(!validEmail || !samePass)
-        return
-        register({ime,prezime,korisnicko,email,password})
-        .then(data => {
-            if(data){
-            setUser(data.user) //ili sta vec ide
-            }
-            else{
-                console.log("Neuspesna registracija");                
-            }
+    let user = {
+        name: ime,
+        surname: prezime,
+        username: korisnicko,
+        password: password,
+        email: email,
+        picture: url
+    }
+
+    const handleSubmit = () => {
+        if(validEmail && samePass){
+        register(user)
+        .then(() => {
+            login(korisnicko,password).then(res =>{
+                console.log(res.data.token);                
+                setToken(res.data.token);
+                setId(res.data.user.user_id);
+                history.push('home');
+            })
         })
+        } else{
+            alert('Something wrong!')
+        }
     }
 
     return (
@@ -64,6 +81,9 @@ const Register = ({setUser, history}) => {
             } }/>
             <input type="password" placeholder="Potvrdi sifru" required onInput={e => {
                 setconfPass(e.target.value)
+            }} />
+            <input type="text" placeholder="Unesi URL.jpg" required onInput={e => {
+                setUrl(e.target.value)
             }} />
                 
 
