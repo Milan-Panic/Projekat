@@ -3,16 +3,17 @@ import { isLogin } from '../services'
 import { Redirect, Link } from 'react-router-dom'
 import  Wrapper  from '../../teams/Wrapper'
 import Logout from './components/Logout'
-import Container from '../../stats/Container'
 
 const Home = () => {
     if(isLogin()){
         return(
             <>
-                <Link className="link" to="/profile">Your Profile</Link>
+            <div className="meni">
+                <Link className="link" to="/profile"><button>Your Profile</button></Link>
+                <Link className="compare" to="/compare"><button>Player Compare</button></Link>
                 <Logout />
-                <Container />
-                <Wrapper />
+            </div>
+                <div><Wrapper /></div>
             </>
     )} else{
         return <Redirect to="/" />

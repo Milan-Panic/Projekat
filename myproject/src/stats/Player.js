@@ -3,11 +3,11 @@ import React from 'react'
 const Player = (props) => {
     let {player} = props;
     return (
-        <div className="player">
+        <div className="player">   
             <p>Games played: {player.games_played}</p>
-            <p>{player.pts}</p>
-            <p>{player.pts}</p>
-            <p>{player.ast}</p>
+            <p>Points:{player.pts}</p>
+            <p>Blocks:{player.blk}</p>
+            <p>Assist{player.ast}</p>
         </div>
     )
     

@@ -1,11 +1,13 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Register from './auth/public/components/Register'
 import Login from './auth/public/components/Login'
 import Home from './auth/private/Home'
 import Navigation from './auth/public/components/Navigation'
 import Header from './auth/public/components/Header'
 import Profile from './auth/private/components/Profile'
+import TeamsDesc from './teams/TeamsDes'
+import Container from './stats/Container'
 import './App.css';
 
 // import Container from './stats/Container';
@@ -32,6 +34,12 @@ function App() {
           </Route>
           <Route path="/profile">
             <Profile />
+          </Route>
+          <Route path="/compare">
+            <Container />
+          </Route>
+          <Route path="/team/:id">
+            <TeamsDesc />
           </Route>
         </Switch>
       </Router>

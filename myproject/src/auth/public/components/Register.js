@@ -10,7 +10,6 @@ const Register = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [confPass, setconfPass] = useState('')
-    const [url, setUrl] = useState('')
 
 
     const [validEmail, setValidEmail] = useState('')
@@ -41,8 +40,7 @@ const Register = () => {
         surname: prezime,
         username: korisnicko,
         password: password,
-        email: email,
-        picture: url
+        email: email
     }
 
     const handleSubmit = () => {
@@ -82,10 +80,6 @@ const Register = () => {
             <input type="password" placeholder="Potvrdi sifru" required onInput={e => {
                 setconfPass(e.target.value)
             }} />
-            <input type="text" placeholder="Unesi URL.jpg" required onInput={e => {
-                setUrl(e.target.value)
-            }} />
-                
 
             <input type="submit" value="Register" onClick={e => {e.preventDefault();handleSubmit()}} />
         </form>

@@ -135,13 +135,6 @@ class Container extends Component {
                     </label>
                 </form>
                 <Prikaz stats={this.state.playerStats}/>
-                 {/* {this.state.playerStats["games_played"]}  games played:
-                <br/>
-                 {this.state.playerStats["pts"]}  points averaged:
-                <br/>
-                 {this.state.playerStats["reb"]}  rebounds averaged:
-                <br/>
-                 {this.state.playerStats["ast"]}  assists played: */}
             </div>
         )
     }

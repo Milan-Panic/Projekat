@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { getUserById } from '../../auth.server'
+import { isLogin } from '../../services'
+import { Redirect } from 'react-router-dom'
 
 const Profile = () => {
 
@@ -7,8 +9,7 @@ const Profile = () => {
         username: '',
         name: '',
         surname: '',
-        email: '',
-        picture: ''
+        email: ''
     })
 
     getUserById(localStorage.getItem('id')).then(res => {
@@ -16,15 +17,13 @@ const Profile = () => {
             username: res.data.user.username,
             name: res.data.user.name,
             surname: res.data.user.surname,
-            email: res.data.user.email,
-            picture: res.data.user.picture
+            email: res.data.user.email
         })
     })
-
+    if(isLogin()){
     return(
         <div className="profile">
            <p>Hello {user.username}!</p>
-           <img src={user.picture} alt="No picture!"></img>
            <div className="user">
                <h3>Info</h3>
                <p>Name: {user.name}</p>
@@ -32,7 +31,9 @@ const Profile = () => {
                <p>Email: {user.email}</p>
            </div>
         </div>
-    )
+    )} else{
+        return <Redirect to="/" />
+    }
 }
 
 export default Profile
