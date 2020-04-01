@@ -18,7 +18,7 @@ const Register = () => {
     const history = useHistory();
 
     useEffect(()=>{
-        function isValidEmail() {
+        function isValidEmail() { // eslint-disable-next-line
             if((/^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/).test(email)){
                 setValidEmail(true)
             }else{

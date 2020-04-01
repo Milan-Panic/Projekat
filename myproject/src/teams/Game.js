@@ -1,9 +1,10 @@
 import React from 'react'
+import './style/game.css'
 
 const Game = (props)=>{
     const {game}=props;
 
-return (<div className={game.home_team_score > game.visitor_team_score ? 'green' : 'red'}>
+return (<div className={game.home_team_score > game.visitor_team_score ? game.home_team.abbreviation : game.visitor_team.abbreviation}>
     <p>
     {game.home_team_score > game.visitor_team_score ? game.home_team.name : game.visitor_team.name} WINS
     </p>
