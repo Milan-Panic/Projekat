@@ -1,6 +1,12 @@
 body {
   margin: 0;
   padding: 2%;
+  background-color: ivory;
+  background-image: url(./teams/style/images/kobe_bryant_fade_away_widescreen.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  color: white;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
   'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
   sans-serif;
