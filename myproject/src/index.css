@@ -237,3 +237,22 @@ tr, td{
   font-size: 37;
   color: blueviolet;
 }
+.pagination{
+  margin-top: 20px;
+}
+
+.pagination > li > a:focus,
+.pagination > li > a:hover,
+.pagination > li > span:focus,
+.pagination > li > span:hover {
+    z-index: 3;
+    color: #23527c;
+    background-color: rgb(107, 19, 107);
+    border-color: #ddd;
+}
+.pagination > li > a{
+  background-color: rgba(212, 211, 196, 0.205);
+  color: white;
+  margin: 3px;
+}
+

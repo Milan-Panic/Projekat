@@ -4,7 +4,7 @@ import { isLogin } from '../../services'
 import { Redirect } from 'react-router-dom'
 import User from './User'
 import Header from '../../public/components/Header'
-
+import Pagination from './Pagination'
 const Profile = () => {
 
     const [user,setUser] = useState({
@@ -14,6 +14,9 @@ const Profile = () => {
         email: ''
     })
     const [users, setUsers] = useState([])
+    const [loading, setLoading] = useState(false)
+    const [currentPage, setCurrentPage] = useState(1)
+    const [postsPerPage] = useState(4)
 
     useEffect(()=>{
         getUserById(localStorage.getItem('id')).then(res => {
@@ -25,8 +28,11 @@ const Profile = () => {
             })
         })
         allUsers().then(res => {
-            setUsers(res.data.users)
+            setLoading(true);
+            setUsers(res.data.users);
+            setLoading(false)
         })
+        //OVDE POZVATI AKO BUDE TREBALO
     },[])
 
     const handleChange = (e) => {
@@ -40,6 +46,12 @@ const Profile = () => {
             }
         }      
     }
+
+    const indexOfLastPost = currentPage * postsPerPage;
+    const indexOfFirstPost = indexOfLastPost - postsPerPage;
+    const currentPosts = users.slice(indexOfFirstPost, indexOfLastPost);
+
+    const paginate = (pageNumber) => setCurrentPage(pageNumber)
 
     if(isLogin()){
     return(
@@ -57,7 +69,8 @@ const Profile = () => {
                 <h3>All Users</h3>
                 <input className='form-control search-user' type='search' placeholder='Search users!'
                 onChange={(e) => { handleChange(e) }}></input>
-               {users.map(us=><User key={us.user_id} user={us}/>)}
+               {currentPosts.map(us=><User key={us.user_id} user={us}/>)}
+               <Pagination postsPerPage={postsPerPage} totalPosts={users.length} paginate={paginate}/>
            </div>
         </div>
         </>
