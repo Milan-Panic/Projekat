@@ -77,9 +77,13 @@ class Container extends Component {
         const player1=await this.getPlOne(playerId1)
         const player2=await this.getPlTwo(playerId2)
         // Promise.All
-        this.setState({
-            playerStats:[player1,player2]
-        });        
+        if (player1 !== undefined && player2 !== undefined) {
+            this.setState({
+                playerStats:[player1,player2]
+            });      
+        }else{
+            alert('Fields are empty or incorect input!')
+        }
     }
     setGlobalState = async() => {
         await this.getPlayerStats(this.state.playerId, this.state.player2Id)        
@@ -87,7 +91,7 @@ class Container extends Component {
     
     handleSubmit = (e) => {
         e.preventDefault();
-        this.setGlobalState()
+        this.setGlobalState() 
         // console.log(this.state.playerName);        
         // console.log(this.state.player2Name);
     }
@@ -129,7 +133,7 @@ class Container extends Component {
                         type="text"
                         value={this.state.value}
                         onChange={this.handleChange}
-                        placeholder="Please enter players name!"/>
+                        placeholder="Player name!"/>
                     
                     <input id="comp" className="btn btn-success btn-block" type="submit" value="Compare"/>
                         <input 
@@ -137,10 +141,11 @@ class Container extends Component {
                         type="text"
                         value={this.state.value}
                         onChange={this.handleChangeD}
-                        placeholder="Please enter players name!"/>
+                        placeholder="Player name!"/>
                     
                 </form>
                 <Prikaz stats={this.state.playerStats}/>
+                {/* {this.state.playerStats === true ? <Prikaz stats={this.state.playerStats}/> : alert('Prazno je')} */}
             </div>
             </>
         )} else{
