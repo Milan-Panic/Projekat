@@ -52,7 +52,7 @@ class Wrapper extends React.Component {
     like = (id) => {
         let teams = this.state.teams
         for (let i = 0; i < teams.length; i++) {
-            if (teams[i].id == id) {
+            if (teams[i].id == id && teams[i].likes < 1) {
                 teams[i].likes += 1;
                 break
             }            

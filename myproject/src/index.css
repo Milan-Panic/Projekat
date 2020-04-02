@@ -1,6 +1,5 @@
 body {
   margin: 0;
-  padding: 2%;
   background-color: ivory;
   background-image: url(./teams/style/images/kobe_bryant_fade_away_widescreen.jpg);
   background-repeat: no-repeat;
@@ -43,11 +42,85 @@ code {
   margin: 0 auto;
   margin-top: 10px;
 }
-
+#root{
+  padding: 0;
+  margin: 0;
+}
+.meni{
+  display: flex;
+  justify-content: space-around;  
+}
+.wrappera{
+  width: 960px;
+  margin: 0 auto;
+}
 .header-container{
-  position: sticky;
+  width: 960px;
+  height: 60px;
+  background-color: lawngreen;
+  margin: 0 auto;
 }
 .stats{
   width: 550px;
 }
+.gamess{
+  height: 35px;
+}
+.gamess:hover > .like {
+  display: inline-block;
+}
+.gamess:hover > .dislike {
+  display: inline-block;
+}
 
+.like{
+  width: 20px;
+  height: 20px;
+  background-image: url(./teams/style/images/like.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: none;
+  cursor: pointer;
+  float: right;
+  margin-left: 5px;
+}
+.dislike{
+  width: 20px;
+  height: 20px;
+  background-image: url(./teams/style/images/dislike.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: none;
+  cursor: pointer;
+  float: right;
+}
+.games-con{
+  width: 960px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.home-con{
+  width: 960px;
+  margin: 0 auto;
+  color: white;
+}
+#home{
+  width: 150px;
+  height: 30px;
+  margin: 20px;
+  font-size: 18px;
+  font-weight: 700;
+  margin-left: 25px;
+}
+.best-five{
+
+} 
+.table-best{
+  color: white;
+  position: relative;
+  left: 700px;
+  top: -500px;
+}

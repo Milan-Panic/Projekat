@@ -3,16 +3,18 @@ import { isLogin } from '../auth/services'
 import { Redirect, useParams } from 'react-router-dom'
 import { getGames } from './nbaServices'
 import Game from './Game'
+import Spinner  from 'react-bootstrap/Spinner'
 
 const TeamsDes = () => {
     let { id } = useParams();
     const [games, setGM] = useState([])
     const [name, setName] = useState('')
-    const [filterHome, setFH] = useState([])
+    const [loading, setLoading] = useState(false)
 
     const setGames = async () => {
         let data = await getGames(id)
         setGM(data)
+        setLoading(true)
     }
     // const getName = () => {
     //     let name;
@@ -56,26 +58,29 @@ const TeamsDes = () => {
     if (isLogin()) {
         console.log(games);
         return (
-            <>
+            <div className="home-con">
                 <select id="home" onChange={(e) => { handleChange(e) }}>
                     <option selected value="ALL">ALL</option>
-                    <option value="Jan">Jan</option>
-                    <option value="Feb">Feb</option>
+                    <option value="Jan">Januar</option>
+                    <option value="Feb">Februar</option>
                     <option value="Mart">Mart</option>
-                    <option value="Apr">Jan</option>
-                    <option value="Maj">Apr</option>
-                    <option value="Jun">Jan</option>
-                    <option value="Jul">Jan</option>
-                    <option value="Avg">Jan</option>
-                    <option value="Sep">Jan</option>
-                    <option value="Okt">Jan</option>
-                    <option value="Nov">Jan</option>
-                    <option value="Dec">Jan</option>
+                    <option value="Apr">April</option>
+                    <option value="Maj">Maj</option>
+                    <option value="Jun">Jun</option>
+                    <option value="Jul">Jul</option>
+                    <option value="Avg">Avgust</option>
+                    <option value="Sep">Septembar</option>
+                    <option value="Okt">Oktobar</option>
+                    <option value="Nov">Novembar</option>
+                    <option value="Dec">Decembar</option>
                 </select>
                 <div className="games-con">
-                    {games.map(game => <Game key={game.id} game={game} />)}
+                    {}
+                    {loading ? games.map(game => <Game key={game.id} game={game} />) : 
+                        <Spinner animation="border" variant="danger" size="xl" />
+                    }
                 </div>
-            </>
+            </div>
         )
     }
     else {

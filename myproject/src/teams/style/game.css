@@ -6,8 +6,163 @@
     background-repeat: no-repeat;
     text-align: left;
     padding: 6px;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
+    border: 5px ridge rgba(23,162,229,0.78);
+    border-radius: 1px 40px 0px 40px;
 }
+.ATL:hover { 
+  background-size: 160px;
+  font-weight: 800;  
+  box-shadow: 3px 3px 17px 9px rgba(0,126,255,0.72);
+}
+.SAS:hover { 
+  background-size: 160px;
+  font-weight: 800;  
+  box-shadow: 3px 3px 17px 9px rgba(0,126,255,0.72);
+}
+.SAC:hover { 
+  background-size: 160px;
+  font-weight: 800;  
+  box-shadow: 3px 3px 17px 9px rgba(0,126,255,0.72);
+}
+.POR:hover { 
+  background-size: 160px;
+  font-weight: 800;  
+  box-shadow: 3px 3px 17px 9px rgba(0,126,255,0.72);
+}
+.TOR:hover { 
+  background-size: 160px;
+  font-weight: 800;  
+  box-shadow: 3px 3px 17px 9px rgba(0,126,255,0.72);
+}
+.UTA:hover { 
+  background-size: 160px;
+  font-weight: 800;  
+  box-shadow: 3px 3px 17px 9px rgba(0,126,255,0.72);
+}
+.WAS:hover { 
+  background-size: 160px;
+  font-weight: 800;  
+  box-shadow: 3px 3px 17px 9px rgba(0,126,255,0.72);
+}
+.PHX:hover { 
+  background-size: 160px;
+  font-weight: 800;  
+  box-shadow: 3px 3px 17px 9px rgba(0,126,255,0.72);
+}
+.PHI:hover { 
+  background-size: 160px;
+  font-weight: 800;  
+  box-shadow: 3px 3px 17px 9px rgba(0,126,255,0.72);
+}
+.ORL:hover { 
+  background-size: 160px;
+  font-weight: 800;  
+  box-shadow: 3px 3px 17px 9px rgba(0,126,255,0.72);
+}
+.NYK:hover { 
+  background-size: 160px;
+  font-weight: 800;  
+  box-shadow: 3px 3px 17px 9px rgba(0,126,255,0.72);
+}
+.OKC:hover { 
+  background-size: 160px;
+  font-weight: 800;  
+  box-shadow: 3px 3px 17px 9px rgba(0,126,255,0.72);
+}
+.NOP:hover { 
+  background-size: 160px;
+  font-weight: 800;  
+  box-shadow: 3px 3px 17px 9px rgba(0,126,255,0.72);
+}
+.MEM:hover { 
+  background-size: 160px;
+  font-weight: 800;  
+  box-shadow: 3px 3px 17px 9px rgba(0,126,255,0.72);
+}
+.LAL:hover { 
+  background-size: 160px;
+  font-weight: 800;  
+  box-shadow: 3px 3px 17px 9px rgba(0,126,255,0.72);
+}
+.LAC:hover { 
+  background-size: 160px;
+  font-weight: 800;  
+  box-shadow: 3px 3px 17px 9px rgba(0,126,255,0.72);
+}
+.MIL:hover { 
+  background-size: 160px;
+  font-weight: 800;  
+  box-shadow: 3px 3px 17px 9px rgba(0,126,255,0.72);
+}
+.MIA:hover { 
+  background-size: 160px;
+  font-weight: 800;  
+  box-shadow: 3px 3px 17px 9px rgba(0,126,255,0.72);
+}
+.MIN:hover { 
+  background-size: 160px;
+  font-weight: 800;  
+  box-shadow: 3px 3px 17px 9px rgba(0,126,255,0.72);
+}
+.IND:hover { 
+  background-size: 160px;
+  font-weight: 800;  
+  box-shadow: 3px 3px 17px 9px rgba(0,126,255,0.72);
+}
+.HOU:hover { 
+  background-size: 160px;
+  font-weight: 800;  
+  box-shadow: 3px 3px 17px 9px rgba(0,126,255,0.72);
+}
+.GSW:hover { 
+  background-size: 160px;
+  font-weight: 800;  
+  box-shadow: 3px 3px 17px 9px rgba(0,126,255,0.72);
+}
+.DET:hover { 
+  background-size: 160px;
+  font-weight: 800;  
+  box-shadow: 3px 3px 17px 9px rgba(0,126,255,0.72);
+}
+.DEN:hover { 
+  background-size: 160px;
+  font-weight: 800;  
+  box-shadow: 3px 3px 17px 9px rgba(0,126,255,0.72);
+}
+.DAL:hover { 
+  background-size: 160px;
+  font-weight: 800;  
+  box-shadow: 3px 3px 17px 9px rgba(0,126,255,0.72);
+}
+.CLE:hover { 
+  background-size: 160px;
+  font-weight: 800;  
+  box-shadow: 3px 3px 17px 9px rgba(0,126,255,0.72);
+}
+.CHI:hover { 
+  background-size: 160px;
+  font-weight: 800;  
+  box-shadow: 3px 3px 17px 9px rgba(0,126,255,0.72);
+}
+.CHA:hover { 
+  background-size: 160px;
+  font-weight: 800;  
+  box-shadow: 3px 3px 17px 9px rgba(0,126,255,0.72);
+}
+.BKN:hover { 
+  background-size: 160px;
+  font-weight: 800;  
+  box-shadow: 3px 3px 17px 9px rgba(0,126,255,0.72);
+}
+.BOS:hover { 
+  background-size: 160px;
+  font-weight: 800;  
+  box-shadow: 3px 3px 17px 9px rgba(0,126,255,0.72);
+}
+
+
+
 .BOS{
   width: 250px;
   background-image: url(./images/58419c6aa6515b1e0ad75a61.png);
@@ -16,7 +171,9 @@
     background-repeat: no-repeat;
     text-align: left;
     padding: 6px;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
+    border: 5px ridge rgba(23,162,229,0.78);
+    border-radius: 1px 40px 0px 40px;
   }
   
   .BKN{
@@ -28,7 +185,9 @@
     background-repeat: no-repeat;
     text-align: left;
     padding: 6px;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
+    border: 5px ridge rgba(23,162,229,0.78);
+    border-radius: 1px 40px 0px 40px;
 }
 .CHA{
     width: 250px;
@@ -39,7 +198,9 @@
     background-repeat: no-repeat;
     text-align: left;
     padding: 6px;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
+    border: 5px ridge rgba(23,162,229,0.78);
+    border-radius: 1px 40px 0px 40px;
   }
   .CHI{
     width: 250px;
@@ -50,7 +211,9 @@
     background-repeat: no-repeat;
     text-align: left;
     padding: 6px;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
+    border: 5px ridge rgba(23,162,229,0.78);
+    border-radius: 1px 40px 0px 40px;
   }
   .CLE{
     width: 250px;
@@ -61,7 +224,9 @@
     background-repeat: no-repeat;
     text-align: left;
     padding: 6px;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
+    border: 5px ridge rgba(23,162,229,0.78);
+    border-radius: 1px 40px 0px 40px;
   }
   .DAL{
     width: 250px;
@@ -72,7 +237,9 @@
     background-repeat: no-repeat;
     text-align: left;
     padding: 6px;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
+    border: 5px ridge rgba(23,162,229,0.78);
+    border-radius: 1px 40px 0px 40px;
   }
   .DEN{
     width: 250px;
@@ -83,7 +250,9 @@
     background-repeat: no-repeat;
     text-align: left;
     padding: 6px;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
+    border: 5px ridge rgba(23,162,229,0.78);
+    border-radius: 1px 40px 0px 40px;
   }
   .DET{
     width: 250px;
@@ -94,7 +263,9 @@
     background-repeat: no-repeat;
     text-align: left;
     padding: 6px;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
+    border: 5px ridge rgba(23,162,229,0.78);
+    border-radius: 1px 40px 0px 40px;
   }
   .GSW{
     width: 250px;
@@ -105,7 +276,9 @@
     background-repeat: no-repeat;
     text-align: left;
     padding: 6px;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
+    border: 5px ridge rgba(23,162,229,0.78);
+    border-radius: 1px 40px 0px 40px;
   }
   .HOU{
     width: 250px;
@@ -116,7 +289,9 @@
     background-repeat: no-repeat;
     text-align: left;
     padding: 6px;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
+    border: 5px ridge rgba(23,162,229,0.78);
+    border-radius: 1px 40px 0px 40px;
   }
   .IND{
     width: 250px;
@@ -127,7 +302,9 @@
     background-repeat: no-repeat;
     text-align: left;
     padding: 6px;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
+    border: 5px ridge rgba(23,162,229,0.78);
+    border-radius: 1px 40px 0px 40px;
   }
   .LAC{
     width: 250px;
@@ -138,7 +315,9 @@
     background-repeat: no-repeat;
     text-align: left;
     padding: 6px;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
+    border: 5px ridge rgba(23,162,229,0.78);
+    border-radius: 1px 40px 0px 40px;
   }
   .LAL{
     width: 250px;
@@ -149,7 +328,9 @@
     background-repeat: no-repeat;
     text-align: left;
     padding: 6px;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
+    border: 5px ridge rgba(23,162,229,0.78);
+    border-radius: 1px 40px 0px 40px;
   }
   .MEM{
     width: 250px;
@@ -160,7 +341,9 @@
     background-repeat: no-repeat;
     text-align: left;
     padding: 6px;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
+    border: 5px ridge rgba(23,162,229,0.78);
+    border-radius: 1px 40px 0px 40px;
   }
   .MIA{
     width: 250px;
@@ -171,7 +354,9 @@
     background-repeat: no-repeat;
     text-align: left;
     padding: 6px;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
+    border: 5px ridge rgba(23,162,229,0.78);
+    border-radius: 1px 40px 0px 40px;
   }
   .MIL{
     width: 250px;
@@ -182,7 +367,9 @@
     background-repeat: no-repeat;
     text-align: left;
     padding: 6px;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
+    border: 5px ridge rgba(23,162,229,0.78);
+    border-radius: 1px 40px 0px 40px;
   }
   .MIN{
     width: 250px;
@@ -193,7 +380,9 @@
     background-repeat: no-repeat;
     text-align: left;
     padding: 6px;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
+    border: 5px ridge rgba(23,162,229,0.78);
+    border-radius: 1px 40px 0px 40px;
   }
   .NOP{
     width: 250px;
@@ -204,7 +393,9 @@
     background-repeat: no-repeat;
     text-align: left;
     padding: 6px;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
+    border: 5px ridge rgba(23,162,229,0.78);
+    border-radius: 1px 40px 0px 40px;
   }
   .NYK{
     width: 250px;
@@ -215,7 +406,9 @@
     background-repeat: no-repeat;
     text-align: left;
     padding: 6px;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
+    border: 5px ridge rgba(23,162,229,0.78);
+    border-radius: 1px 40px 0px 40px;
   }
   .OKC{
     width: 250px;
@@ -226,7 +419,9 @@
     background-repeat: no-repeat;
     text-align: left;
     padding: 6px;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
+    border: 5px ridge rgba(23,162,229,0.78);
+    border-radius: 1px 40px 0px 40px;
   }
   .ORL{
     width: 250px;
@@ -237,7 +432,9 @@
     background-repeat: no-repeat;
     text-align: left;
     padding: 6px;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
+    border: 5px ridge rgba(23,162,229,0.78);
+    border-radius: 1px 40px 0px 40px;
   }
   .PHI{
     width: 250px;
@@ -248,7 +445,9 @@
     background-repeat: no-repeat;
     text-align: left;
     padding: 6px;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
+    border: 5px ridge rgba(23,162,229,0.78);
+    border-radius: 1px 40px 0px 40px;
   }
   .PHX{
     width: 250px;
@@ -259,7 +458,9 @@
     background-repeat: no-repeat;
     text-align: left;
     padding: 6px;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
+    border: 5px ridge rgba(23,162,229,0.78);
+    border-radius: 1px 40px 0px 40px;
   }
   .POR{
     width: 250px;
@@ -270,7 +471,9 @@
     background-repeat: no-repeat;
     text-align: left;
     padding: 6px;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
+    border: 5px ridge rgba(23,162,229,0.78);
+    border-radius: 1px 40px 0px 40px;
   }
   .SAC{
     width: 250px;
@@ -281,7 +484,9 @@
     background-repeat: no-repeat;
     text-align: left;
     padding: 6px;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
+    border: 5px ridge rgba(23,162,229,0.78);
+    border-radius: 1px 40px 0px 40px;
   }
   .SAS{
     width: 250px;
@@ -292,7 +497,9 @@
     background-repeat: no-repeat;
     text-align: left;
     padding: 6px;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
+    border: 5px ridge rgba(23,162,229,0.78);
+    border-radius: 1px 40px 0px 40px;
   }
   .TOR{
     width: 250px;
@@ -303,7 +510,9 @@
     background-repeat: no-repeat;
     text-align: left;
     padding: 6px;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
+    border: 5px ridge rgba(23,162,229,0.78);
+    border-radius: 1px 40px 0px 40px;
   }
   .UTA{
     width: 250px;
@@ -314,7 +523,9 @@
     background-repeat: no-repeat;
     text-align: left;
     padding: 6px;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
+    border: 5px ridge rgba(23,162,229,0.78);
+    border-radius: 1px 40px 0px 40px;
   }
   .WAS{
     width: 250px;
@@ -325,5 +536,7 @@
     background-repeat: no-repeat;
     text-align: left;
     padding: 6px;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
+    border: 5px ridge rgba(23,162,229,0.78);
+    border-radius: 1px 40px 0px 40px;
   }

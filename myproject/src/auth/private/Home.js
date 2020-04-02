@@ -3,6 +3,7 @@ import { isLogin } from '../services'
 import { Redirect, Link } from 'react-router-dom'
 import  Wrapper  from '../../teams/Wrapper'
 import Logout from './components/Logout'
+import Best from './components/bestFive'
 
 const Home = () => {
     if(isLogin()){
@@ -13,7 +14,8 @@ const Home = () => {
                 <Link className="compare" to="/compare"><button>Player Compare</button></Link>
                 <Logout />
             </div>
-                <div><Wrapper /></div>
+                <div className="wrappera"><Wrapper /></div>
+                <Best className="best-five"/>
             </>
     )} else{
         return <Redirect to="/" />
