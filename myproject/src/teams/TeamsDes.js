@@ -3,7 +3,7 @@ import { isLogin } from '../auth/services'
 import { Redirect, useParams } from 'react-router-dom'
 import { getGames } from './nbaServices'
 import Game from './Game'
-import Spinner  from 'react-bootstrap/Spinner'
+import Spinner from 'react-bootstrap/Spinner'
 
 const TeamsDes = () => {
     let { id } = useParams();
@@ -32,26 +32,21 @@ const TeamsDes = () => {
     }, [])
 
     const handleChange = (e) => {
-        /*const selectedValue = e.target.value;
-        console.log(selectedValue);
-        console.log(name);        
-        const filtered = games.filter(gm => gm.home_team.name === 'Nuggets')
-        setGM(filtered)*/
         console.log(e.target.value);
         const months = document.querySelectorAll('.date')
         for (let index = 0; index < months.length; index++) {
             if (months[index].innerHTML == e.target.value) {
                 months[index].parentElement.style.display = ''
-            }else if(e.target.value == 'ALL'){
+            } else if (e.target.value == 'ALL') {
                 months[index].parentElement.style.display = ''
             }
-            else{
+            else {
                 months[index].parentElement.style.display = 'none'
             }
-            
+
         }
         console.log(months);
-        
+
 
     }
 
@@ -75,8 +70,7 @@ const TeamsDes = () => {
                     <option value="Dec">Decembar</option>
                 </select>
                 <div className="games-con">
-                    {}
-                    {loading ? games.map(game => <Game key={game.id} game={game} />) : 
+                    {loading ? games.map(game => <Game key={game.id} game={game} />) :
                         <Spinner animation="border" variant="danger" size="xl" />
                     }
                 </div>

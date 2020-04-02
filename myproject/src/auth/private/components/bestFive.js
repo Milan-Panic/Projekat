@@ -20,40 +20,34 @@ class Best extends Component {
 
     }
 
-    sortPts(e){
+    sort(e, arg){
         e.preventDefault()
-        let sorted = this.state.bestFive.sort((b, a) => a.pts - b.pts);
+        let sorted = this.state.bestFive.sort((b, a) => a[arg] - b[arg]);
         this.setState({bestFive: sorted})        
     }
-    sortBlk(e){
-        e.preventDefault()
-        let sorted = this.state.bestFive.sort((b, a) => a.blk - b.blk);
-        this.setState({bestFive: sorted})        
-    }
-    sortAsst(e){
-        e.preventDefault()
-        let sorted = this.state.bestFive.sort((b, a) => a.ast - b.ast);
-        this.setState({bestFive: sorted})        
-    }
-
+    
     render() {
         console.log(this.state.bestFive);
         
         return (
-            <table className="table-best">
+            <div className="table-best">
+            <h1>Best Five for Season 2018/2019</h1>
+            <table >
                 <thead>
                 <tr>
-                    <th>Games player</th>
                     <th></th>
-                    <th><button onClick={(e)=>{this.sortPts(e)}}>Points</button></th>
-                    <th><button onClick={(e)=>{this.sortBlk(e)}}>Blocks</button></th>
-                    <th><button onClick={(e)=>{this.sortAsst(e)}}>Assist</button></th>
+                    <th>Player Name:</th>
+                    <th>Games</th>
+                    <th><button onClick={(e)=>{this.sort(e, 'pts')}}>Points</button></th>
+                    <th><button onClick={(e)=>{this.sort(e, 'blk')}}>Blocks</button></th>
+                    <th><button onClick={(e)=>{this.sort(e, 'ast')}}>Assist</button></th>
                 </tr>
                 </thead>
                 <tbody>
                 {this.state.bestFive.map((pl, i) => <Red key={i} pla={pl} />)}
                 </tbody>
             </table>
+            </div>
         )
     }
 

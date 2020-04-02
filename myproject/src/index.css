@@ -29,18 +29,24 @@ code {
 }
 
 .West{
-  background-color: red;
+  background-color: rgb(209, 40, 40);
   width: 200px;
   color: whitesmoke;
   margin: 0 auto;
+  padding: 5px;
   margin-top: 10px;
+  border-radius: 7px;
+
 }
 .East{
-  background-color: blue;
+  background-color: rgb(0, 2, 107);
   width: 200px;
   color: whitesmoke;
   margin: 0 auto;
   margin-top: 10px;
+  padding: 5px;
+  border-radius: 7px;
+
 }
 #root{
   padding: 0;
@@ -56,15 +62,24 @@ code {
 }
 .header-container{
   width: 960px;
-  height: 60px;
-  background-color: lawngreen;
+  height: auto;
+  color: white;
+  background-color: rgb(0, 2, 107);
   margin: 0 auto;
+  padding: 10px;
+  display: flex;
 }
 .stats{
   width: 550px;
 }
 .gamess{
-  height: 35px;
+  height: 40px;
+}
+.gamess:hover{
+  position: relative;
+  z-index: 2;
+  left: 20px;
+  top: -5px;
 }
 .gamess:hover > .like {
   display: inline-block;
@@ -115,12 +130,39 @@ code {
   font-weight: 700;
   margin-left: 25px;
 }
-.best-five{
-
-} 
 .table-best{
+  width: 600px;
+  padding: 15px;
+  border-radius: 20px;
   color: white;
+  background-color: rgba(212, 211, 196, 0.205);
+  font-size: 20px;
   position: relative;
-  left: 700px;
-  top: -500px;
+  left: 450px;
+  top: -650px;
+}
+.prof-pic{
+  width: 100px;
+  border-radius: 50%;
+}
+.logo{
+  height: 90px;
+}
+.profile{
+  width: 960px;
+  margin: 0 auto;
+}
+.user{
+  margin-top: 30px;
+  color: white;
+  font-size: 20px;
+  background-color: rgba(212, 211, 196, 0.205);
+  padding: 30px;
+}
+.users{
+  border: 1px solid  rgba(212, 211, 196, 0.205);
+  padding: 5px;
+}
+.search-user{
+  margin: 30px;
 }
