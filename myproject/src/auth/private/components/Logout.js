@@ -1,6 +1,7 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom';
 import { deleteUser } from '../../services';
+import Header from '../../public/components/Header';
 
 const Logout = () => {
 
@@ -13,10 +14,13 @@ const Logout = () => {
     }
 
     return(
+        <>
+        <Header />
         <div id="logout" >
-            Log out? 
-            <button onClick={(e) => handleChange(e)}>Logout</button>
+            <p>Are you sure you want to go?!</p>
+            <button className="btn btn-success btn-block" onClick={(e) => handleChange(e)}>Logout</button>
         </div>
+        </>
     )
 
 }

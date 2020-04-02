@@ -1,6 +1,7 @@
 import React from 'react'
 import { getAll } from './nbaServices'
 import TeamsList from './TeamsList';
+import Best from '../auth/private/components/bestFive';
 
 class Wrapper extends React.Component {
     constructor(props) {
@@ -10,9 +11,7 @@ class Wrapper extends React.Component {
             teams: [],
             showConference: true,
             prikaz: []
-        }
-
-        
+        }        
     }
 
     componentDidMount(){
@@ -52,7 +51,7 @@ class Wrapper extends React.Component {
     like = (id) => {
         let teams = this.state.teams
         for (let i = 0; i < teams.length; i++) {
-            if (teams[i].id == id && teams[i].likes < 1) {
+            if (teams[i].id === id && teams[i].likes < 1) {
                 teams[i].likes += 1;
                 break
             }            
@@ -64,8 +63,8 @@ class Wrapper extends React.Component {
     dislike = (id) => {
         let teams = this.state.teams
         for (let i = 0; i < teams.length; i++) {
-            if (teams[i].id == id) {
-                if(teams[i].likes == 0){
+            if (teams[i].id === id) {
+                if(teams[i].likes === 0){
                     return
                 }
                 teams[i].likes -= 1;
@@ -78,10 +77,13 @@ class Wrapper extends React.Component {
 
     render() {
         return (
+            <>
             <div className="cont">
                 <button onClick={() => { this.handleClick() }} className={this.state.showConference ? 'West' : 'East'}>{this.state.showConference ? 'Show West' : 'Show East'}</button>
                 <TeamsList like={this.like} dislike={this.dislike} teams={this.state.prikaz.length !== 0 ? this.state.prikaz : this.east()}/>
             </div>
+            <Best />
+            </>
         )
     }
 

@@ -1,21 +1,18 @@
 import React from 'react'
 import { isLogin } from '../services'
-import { Redirect, Link } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 import  Wrapper  from '../../teams/Wrapper'
-import Logout from './components/Logout'
-import Best from './components/bestFive'
+import Header from '../public/components/Header'
+//import Logout from './components/Logout'
+//import Best from './components/bestFive'
 
 const Home = () => {
     if(isLogin()){
         return(
             <>
-            <div className="meni">
-                <Link className="link" to="/profile"><button>Your Profile</button></Link>
-                <Link className="compare" to="/compare"><button>Player Compare</button></Link>
-                <Logout />
-            </div>
+                <Header />
                 <div className="wrappera"><Wrapper /></div>
-                <Best className="best-five"/>
+                {/* <Best className="best-five"/> */}
             </>
     )} else{
         return <Redirect to="/" />

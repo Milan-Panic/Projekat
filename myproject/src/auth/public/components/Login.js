@@ -18,10 +18,11 @@ const Login = () => {
     }
 
     return(
-        <form onSubmit={(e) => { e.preventDefault(); handleClick()}}>
-            <div><input type="text" id="username" placeholder="USERNAME" onInput={(e) => setUsername(e.target.value)} required/></div>
-            <div><input type="password" id="password" placeholder="PASSWORD" onInput={(e) => setPassword(e.target.value)} required/></div>
-            <div><input type="submit" value="Log in!" /></div>
+        <form className="form-group" onSubmit={(e) => { e.preventDefault(); handleClick()}}>
+            <h4>Login!</h4>
+            <div><input className="form-control" type="text" id="username" placeholder="USERNAME" onInput={(e) => setUsername(e.target.value)} required/></div>
+            <div><input className="form-control" type="password" id="password" placeholder="PASSWORD" onInput={(e) => setPassword(e.target.value)} required/></div>
+            <div><input className="btn btn-success btn-block" type="submit" value="Log in!" /></div>
         </form>
     )
 }

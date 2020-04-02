@@ -60,28 +60,28 @@ const Register = () => {
     }
 
     return (
-        <form>
-            <input type="text" placeholder="Ime" required onInput={e => {
+        <form className="form-group">
+            <input className="form-control" type="text" placeholder="Ime" required onInput={e => {
                 setIme(e.target.value)
             }}/>
-            <input type="text" placeholder="Prezime" required onInput={e => {
+            <input className="form-control" type="text" placeholder="Prezime" required onInput={e => {
                 setPrezime(e.target.value)
             }}/>
 
-            <input type="text" placeholder="Korisnicko ime" required onInput={e => {
+            <input className="form-control" type="text" placeholder="Korisnicko ime" required onInput={e => {
                 setKorisnicko(e.target.value)
             }}/>  
-            <input type="email" placeholder="Email" required onInput={e => {
+            <input className="form-control" type="email" placeholder="Email" required onInput={e => {
                 setEmail(e.target.value)
             }}/>
-            <input type="password" placeholder="Sifra" required onInput={e => {
+            <input className="form-control" type="password" placeholder="Sifra" required onInput={e => {
                 setPassword(e.target.value)
             } }/>
-            <input type="password" placeholder="Potvrdi sifru" required onInput={e => {
+            <input className="form-control" type="password" placeholder="Potvrdi sifru" required onInput={e => {
                 setconfPass(e.target.value)
             }} />
 
-            <input type="submit" value="Register" onClick={e => {e.preventDefault();handleSubmit()}} />
+            <input className="btn btn-success btn-block" type="submit" value="Register" onClick={e => {e.preventDefault();handleSubmit()}} />
         </form>
     )
 }

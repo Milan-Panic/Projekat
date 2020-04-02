@@ -4,11 +4,12 @@ import Register from './auth/public/components/Register'
 import Login from './auth/public/components/Login'
 import Home from './auth/private/Home'
 import Navigation from './auth/public/components/Navigation'
-import Header from './auth/public/components/Header'
+// import Header from './auth/public/components/Header'
 import Profile from './auth/private/components/Profile'
 import TeamsDesc from './teams/TeamsDes'
 import Container from './stats/Container'
 import './App.css';
+import Logout from './auth/private/components/Logout';
 
 // import Container from './stats/Container';
 // import Wrapper from './teams/Wrapper';
@@ -18,7 +19,7 @@ function App() {
   return (
     <>
       <Router>
-        <Header />
+        {/* <Header /> */}
         <Switch>
           <Route exact path="/">
             <Navigation />
@@ -37,6 +38,9 @@ function App() {
           </Route>
           <Route path="/compare">
             <Container />
+          </Route>
+          <Route path="/logout">
+            <Logout />
           </Route>
           <Route path="/team/:id">
             <TeamsDesc />

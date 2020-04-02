@@ -4,11 +4,11 @@ import { Redirect, useParams } from 'react-router-dom'
 import { getGames } from './nbaServices'
 import Game from './Game'
 import Spinner from 'react-bootstrap/Spinner'
+import Header from '../auth/public/components/Header'
 
 const TeamsDes = () => {
     let { id } = useParams();
     const [games, setGM] = useState([])
-    const [name, setName] = useState('')
     const [loading, setLoading] = useState(false)
 
     const setGames = async () => {
@@ -16,28 +16,18 @@ const TeamsDes = () => {
         setGM(data)
         setLoading(true)
     }
-    // const getName = () => {
-    //     let name;
-    //     games.forEach(gm =>{
-    //         if(gm.home_team.id === id){ 
-    //             name = gm.home_team.name
-    //             setName(name);
-    //         }
-    //     })
-    // }
 
     useEffect(() => {
         setGames()
-        // getName()
-    }, [])
+    },[])
 
     const handleChange = (e) => {
         console.log(e.target.value);
         const months = document.querySelectorAll('.date')
         for (let index = 0; index < months.length; index++) {
-            if (months[index].innerHTML == e.target.value) {
+            if (months[index].innerHTML === e.target.value) {
                 months[index].parentElement.style.display = ''
-            } else if (e.target.value == 'ALL') {
+            } else if (e.target.value === 'ALL') {
                 months[index].parentElement.style.display = ''
             }
             else {
@@ -53,9 +43,11 @@ const TeamsDes = () => {
     if (isLogin()) {
         console.log(games);
         return (
+            <>
+            <Header />
             <div className="home-con">
                 <select id="home" onChange={(e) => { handleChange(e) }}>
-                    <option selected value="ALL">ALL</option>
+                    <option defaultValue="ALL">ALL</option>
                     <option value="Jan">Januar</option>
                     <option value="Feb">Februar</option>
                     <option value="Mart">Mart</option>
@@ -75,6 +67,7 @@ const TeamsDes = () => {
                     }
                 </div>
             </div>
+            </>
         )
     }
     else {

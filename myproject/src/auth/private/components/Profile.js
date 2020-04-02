@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { getUserById, allUsers } from '../../auth.server'
 import { isLogin } from '../../services'
-import { Redirect, useParams } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 import User from './User'
+import Header from '../../public/components/Header'
 
 const Profile = () => {
 
@@ -42,6 +43,8 @@ const Profile = () => {
 
     if(isLogin()){
     return(
+        <>
+        <Header />
         <div className="profile">
            <div className="user">
             <h3>Hello {user.username}!</h3>
@@ -52,11 +55,12 @@ const Profile = () => {
            </div>
            <div className="user">
                 <h3>All Users</h3>
-                <input className='search-user' type='text' placeholder='Search users!'
+                <input className='form-control search-user' type='search' placeholder='Search users!'
                 onChange={(e) => { handleChange(e) }}></input>
                {users.map(us=><User key={us.user_id} user={us}/>)}
            </div>
         </div>
+        </>
     )} else{
         return <Redirect to="/" />
     }

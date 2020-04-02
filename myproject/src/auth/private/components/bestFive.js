@@ -31,16 +31,16 @@ class Best extends Component {
         
         return (
             <div className="table-best">
-            <h1>Best Five for Season 2018/2019</h1>
-            <table >
+            <h3>Best Five for Season 2018/2019</h3>
+            <table className="table">
                 <thead>
                 <tr>
                     <th></th>
                     <th>Player Name:</th>
                     <th>Games</th>
-                    <th><button onClick={(e)=>{this.sort(e, 'pts')}}>Points</button></th>
-                    <th><button onClick={(e)=>{this.sort(e, 'blk')}}>Blocks</button></th>
-                    <th><button onClick={(e)=>{this.sort(e, 'ast')}}>Assist</button></th>
+                    <th><button className="btn btn-warning btn-block" onClick={(e)=>{this.sort(e, 'pts')}}>Points</button></th>
+                    <th><button className="btn btn-warning btn-block" onClick={(e)=>{this.sort(e, 'blk')}}>Blocks</button></th>
+                    <th><button className="btn btn-warning btn-block" onClick={(e)=>{this.sort(e, 'ast')}}>Assist</button></th>
                 </tr>
                 </thead>
                 <tbody>

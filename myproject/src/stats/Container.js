@@ -1,6 +1,9 @@
 import React, {Component} from 'react'
 import axios from 'axios'
 import Prikaz from './Prikaz'
+import { isLogin } from '../auth/services'
+import { Redirect } from 'react-router-dom'
+import Header from '../auth/public/components/Header'
 
 
 
@@ -114,29 +117,35 @@ class Container extends Component {
     // }
     
     render(){
+    if(isLogin()){
         return (
+            <>
+            <Header />
             <div className="stats">
-                <form onSubmit={this.handleSubmit}>
-                    <label>
-                        PlayerOne
+                <form className="compare-form form-group" onSubmit={this.handleSubmit}>
+                
                         <input 
+                        className="form-control"
                         type="text"
                         value={this.state.value}
                         onChange={this.handleChange}
                         placeholder="Please enter players name!"/>
-                    </label>
-                    <input type="submit" value="Compare"/>
-                    <label>
+                    
+                    <input id="comp" className="btn btn-success btn-block" type="submit" value="Compare"/>
                         <input 
+                        className="form-control"
                         type="text"
                         value={this.state.value}
                         onChange={this.handleChangeD}
-                        placeholder="Please enter players name!"/>PlayerTwo
-                    </label>
+                        placeholder="Please enter players name!"/>
+                    
                 </form>
                 <Prikaz stats={this.state.playerStats}/>
             </div>
-        )
+            </>
+        )} else{
+            return <Redirect to="/" />
+        }
     }
     
     

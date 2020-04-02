@@ -14,10 +14,13 @@ const Red = (props) => {
             break;
         case 246: name = 'Nikola Jokic'
             break;
+        default: name = 'Nema tog imena'
+            break;
     }
+    
     return (
         <tr className="red">
-            <td><img className="prof-pic" src={`./img/${pla.player_id}.png`}></img></td>
+            <td><img className="prof-pic" src={`./img/${pla.player_id}.png`} alt="Slika"></img></td>
             <td>{name}</td>
             <td>{pla.games_played}</td>
             <td>{pla.pts}</td>
