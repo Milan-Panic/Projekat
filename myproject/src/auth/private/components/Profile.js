@@ -14,7 +14,7 @@ const Profile = () => {
         email: ''
     })
     const [users, setUsers] = useState([])
-    const [loading, setLoading] = useState(false)
+    const [setLoading] = useState(false)
     const [currentPage, setCurrentPage] = useState(1)
     const [postsPerPage] = useState(4)
 
