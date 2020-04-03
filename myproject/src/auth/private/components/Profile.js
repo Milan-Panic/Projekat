@@ -14,9 +14,8 @@ const Profile = () => {
         email: ''
     })
     const [users, setUsers] = useState([])
-    const [setLoading] = useState(false)
     const [currentPage, setCurrentPage] = useState(1)
-    const [postsPerPage] = useState(4)
+    const [postsPerPage] = useState(10)
 
     useEffect(()=>{
         getUserById(localStorage.getItem('id')).then(res => {
@@ -28,9 +27,7 @@ const Profile = () => {
             })
         })
         allUsers().then(res => {
-            setLoading(true);
             setUsers(res.data.users);
-            setLoading(false)
         })
         //OVDE POZVATI AKO BUDE TREBALO
     },[])
@@ -67,7 +64,7 @@ const Profile = () => {
            </div>
            <div className="user">
                 <h3>All Users</h3>
-                <input className='form-control search-user' type='search' placeholder='Search users!'
+                <input className='form-control' type='search' placeholder='Search users!'
                 onChange={(e) => { handleChange(e) }}></input>
                {currentPosts.map(us=><User key={us.user_id} user={us}/>)}
                <Pagination postsPerPage={postsPerPage} totalPosts={users.length} paginate={paginate}/>
