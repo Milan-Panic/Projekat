@@ -1,5 +1,6 @@
 # Projekat NBA Stats
 ITBootcamp
+https://nbastatsmilanpanic.herokuapp.com/
 
 NBA Stats, je aplikacija koja pruza uvid u osnovne podatke u vezi sa NBA utakmicama.
 Za dobijanje podataka koriscen je API sa ove lokacije https://www.balldontlie.io/ a komunikaciju za autorizaciju
