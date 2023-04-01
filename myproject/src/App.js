@@ -6,7 +6,9 @@ import Home from './auth/private/Home'
 import Navigation from './auth/public/components/Navigation'
 // import Header from './auth/public/components/Header'
 import Profile from './auth/private/components/Profile'
+import Odds from './auth/private/components/Sports'
 import TeamsDesc from './teams/TeamsDes'
+import SportGames from './teams/SportGames'
 import Container from './stats/Container'
 import './App.css';
 import Logout from './auth/private/components/Logout';
@@ -33,6 +35,9 @@ function App() {
           <Route path="/home">
             <Home />
           </Route>
+          <Route path="/sports">
+            <Odds />
+          </Route>
           <Route path="/profile">
             <Profile />
           </Route>
@@ -44,6 +49,9 @@ function App() {
           </Route>
           <Route path="/team/:id">
             <TeamsDesc />
+          </Route>
+          <Route path="/sport/:key">
+            <SportGames />
           </Route>
         </Switch>
       </Router>

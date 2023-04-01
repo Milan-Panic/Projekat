@@ -50,7 +50,7 @@ const Register = () => {
             login(korisnicko,password).then(res =>{
                 console.log(res.data.token);                
                 setToken(res.data.token);
-                setId(res.data.user.user_id);
+                setId(res.data.id);
                 history.push('home');
             })
         })

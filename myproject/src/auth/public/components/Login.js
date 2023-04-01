@@ -12,7 +12,7 @@ const Login = () => {
     const handleClick = () => {
         login(username,password).then(res => {
             setToken(res.data.token);
-            setId(res.data.user.user_id);
+            setId(res.data.id);
             history.push('home');
         }) 
     }

@@ -20,14 +20,14 @@ const Profile = () => {
     useEffect(()=>{
         getUserById(localStorage.getItem('id')).then(res => {
             setUser({
-                username: res.data.user.username,
-                name: res.data.user.name,
-                surname: res.data.user.surname,
-                email: res.data.user.email
+                username: res.data.username,
+                name: res.data.name,
+                surname: res.data.surname,
+                email: res.data.email
             })
         })
         allUsers().then(res => {
-            setUsers(res.data.users);
+            setUsers(res.data);
         })
         //OVDE POZVATI AKO BUDE TREBALO
     },[])
@@ -66,7 +66,7 @@ const Profile = () => {
                 <h3>All Users</h3>
                 <input className='form-control' type='search' placeholder='Search users!'
                 onChange={(e) => { handleChange(e) }}></input>
-               {currentPosts.map(us=><User key={us.user_id} user={us}/>)}
+               {currentPosts.map(us=><User key={us.id} user={us}/>)}
                <Pagination postsPerPage={postsPerPage} totalPosts={users.length} paginate={paginate}/>
            </div>
         </div>
