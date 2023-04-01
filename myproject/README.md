@@ -3,7 +3,7 @@ ITBootcamp
 
 NBA Stats, je aplikacija koja pruza uvid u osnovne podatke u vezi sa NBA utakmicama.
 Za dobijanje podataka koriscen je API sa ove lokacije https://www.balldontlie.io/ a komunikaciju za autorizaciju
-koriscen je bekend server na lokaciji https://coetus.herokuapp.com/api/users.
+koriscen je PHP bekend i to je potrebno pokrenuti (ovo iskljucivo radi u lokalu), a svi potrebni fajlovi se nalaze u php_user_authentication
 
 # NBA Stats aplikacija pravljena je u:
   * React-u
